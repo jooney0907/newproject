@@ -2,8 +2,12 @@
   <header class="header">
     <div class="logo">♥ What Do They Really Mean?</div>
     <div class="nav-buttons">
-      <button (click)="goToLogin()" class="btn btn-outline">Login</button>
-      <button (click)="goToSignup()" class="btn btn-primary">Sign Up</button>
+      @if (isLoggedIn) {
+        <button (click)="logout()" class="btn btn-outline">Logout</button>
+      } @else {
+        <button (click)="goToLogin()" class="btn btn-outline">Login</button>
+        <button (click)="goToSignup()" class="btn btn-primary">Sign Up</button>
+      }
     </div>
   </header>
 

@@ -9,7 +9,12 @@ import { Router } from '@angular/router';
   standalone: true,
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  isLoggedIn: boolean;
+
+  constructor(private router: Router) {
+    const account = localStorage.getItem('account');
+    this.isLoggedIn = !!account;
+  }
 
   goToLogin() {
     this.router.navigate(['/login']);
@@ -17,5 +22,11 @@ export class HomeComponent {
 
   goToSignup() {
     this.router.navigate(['/signup']);
+  }
+
+  logout() {
+    localStorage.removeItem('account');
+    this.isLoggedIn = false;
+    this.router.navigate(['/']);
   }
 }
