@@ -14,6 +14,10 @@ export class SignupComponent {
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
   signupForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],

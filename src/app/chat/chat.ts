@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 interface ChatMessage {
   id: number;
@@ -19,6 +20,8 @@ interface ChatMessage {
   standalone: true,
 })
 export class ChatComponent {
+  private router = inject(Router);
+
   messages: ChatMessage[] = [
     { id: 1, text: "Hey, are you okay?", sender: 'boy', timestamp: new Date('2026-02-25T10:30:00') },
     { id: 2, text: "Yeah I'm fine", sender: 'girl', translation: "I'm actually upset but don't want to talk about it", timestamp: new Date('2026-02-25T10:31:00') },
@@ -26,6 +29,10 @@ export class ChatComponent {
   ];
 
   newMessage = '';
+
+  goHome() {
+    this.router.navigate(['/']);
+  }
 
   sendMessage() {
     if (this.newMessage.trim()) {

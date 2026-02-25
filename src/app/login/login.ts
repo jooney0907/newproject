@@ -21,6 +21,10 @@ export class Login {
     password: ['', Validators.required]
   });
 
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
   login() {
     this.error = null;
     if (this.loginForm.valid) {
