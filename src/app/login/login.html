@@ -29,6 +29,13 @@
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
         </form>
+        <div class="divider">
+          <span>Or continue with</span>
+        </div>
+        <button type="button" class="btn btn-google" (click)="signInWithGoogle()">
+          <img src="https://www.google.com/favicon.ico" alt="Google" class="google-icon">
+          Login with Google
+        </button>
         <div class="footer-text">
           Don't have an account? 
           <a href="/signup">Sign up</a>

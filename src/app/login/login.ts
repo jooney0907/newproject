@@ -38,4 +38,19 @@ export class Login {
       this.error = 'Please fill in all fields.';
     }
   }
+
+  signInWithGoogle() {
+    const googleEmail = prompt('Please enter your Google email:');
+    if (googleEmail) {
+      const storedAccount = localStorage.getItem('account');
+      if (storedAccount) {
+        const account = JSON.parse(storedAccount);
+        if (account.email === googleEmail && account.password === 'google-signed-in') {
+          this.router.navigate(['/chat']);
+          return;
+        }
+      }
+      this.error = 'No Google account found. Please sign up first.';
+    }
+  }
 }

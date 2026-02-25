@@ -29,4 +29,17 @@ export class SignupComponent {
       console.log('Form is not valid');
     }
   }
+
+  signInWithGoogle() {
+    const googleEmail = prompt('Please enter your Google email:');
+    if (googleEmail) {
+      const account = {
+        name: googleEmail.split('@')[0],
+        email: googleEmail,
+        password: 'google-signed-in'
+      };
+      localStorage.setItem('account', JSON.stringify(account));
+      this.router.navigate(['/chat']);
+    }
+  }
 }
