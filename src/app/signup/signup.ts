@@ -22,7 +22,8 @@ export class SignupComponent {
 
   signup() {
     if (this.signupForm.valid) {
-      console.log(this.signupForm.value);
+      const account = this.signupForm.value;
+      localStorage.setItem('account', JSON.stringify(account));
       this.router.navigate(['/chat']);
     } else {
       console.log('Form is not valid');

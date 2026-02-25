@@ -1,1 +1,28 @@
-<p>chat works!</p>
+<div class="chat-container">
+  <div class="chat-header">
+    <h2>What Did They Really Mean?</h2>
+  </div>
+  
+  <div class="chat-messages">
+    @for (message of messages; track message.id) {
+      <div class="message" [class]="message.sender">
+        <div class="message-bubble">
+          <p class="message-text">{{ message.text }}</p>
+          @if (message.translation) {
+            <p class="message-translation">→ {{ message.translation }}</p>
+          }
+        </div>
+      </div>
+    }
+  </div>
+  
+  <div class="chat-input">
+    <input 
+      type="text" 
+      [(ngModel)]="newMessage" 
+      (keyup.enter)="sendMessage()"
+      placeholder="Type a message..."
+    >
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

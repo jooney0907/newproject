@@ -1,28 +1,29 @@
-<div class="login-container">
-  <div class="boy-side"></div>
-  <div class="girl-side"></div>
-  <div class="login-form">
-    <h2><i>Create Account</i></h2>
-    <form [formGroup]="signupForm" (ngSubmit)="signup()">
-      <div class="input-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" formControlName="name">
+<div class="signup-container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Sign Up</h2>
+      <p class="card-description">Enter your information to create an account</p>
+    </div>
+    <div class="card-content">
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" formControlName="name" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="m@example.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Create an account</button>
+      </form>
+      <div class="footer-text">
+        Already have an account? 
+        <a href="/login">Log in</a>
       </div>
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" formControlName="email">
-        @if (signupForm.get('email')?.hasError('email') && signupForm.get('email')?.touched) {
-          <div class="error-message">Please enter a valid email address.</div>
-        }
-      </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" formControlName="password">
-      </div>
-      <button type="submit" [disabled]="!signupForm.valid" [style.background]="'linear-gradient(to right, #0072ff, #ff9a9e)'">Sign Up</button>
-      <div class="create-account">
-        <a href="/login">Already have an account? Login</a>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
