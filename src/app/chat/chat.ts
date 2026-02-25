@@ -7,6 +7,7 @@ interface ChatMessage {
   text: string;
   sender: 'boy' | 'girl' | 'translation';
   translation?: string;
+  timestamp: Date;
 }
 
 @Component({
@@ -19,9 +20,9 @@ interface ChatMessage {
 })
 export class ChatComponent {
   messages: ChatMessage[] = [
-    { id: 1, text: "Hey, are you okay?", sender: 'boy' },
-    { id: 2, text: "Yeah I'm fine", sender: 'girl', translation: "I'm actually upset but don't want to talk about it" },
-    { id: 3, text: "Okay cool", sender: 'boy' },
+    { id: 1, text: "Hey, are you okay?", sender: 'boy', timestamp: new Date('2026-02-25T10:30:00') },
+    { id: 2, text: "Yeah I'm fine", sender: 'girl', translation: "I'm actually upset but don't want to talk about it", timestamp: new Date('2026-02-25T10:31:00') },
+    { id: 3, text: "Okay cool", sender: 'boy', timestamp: new Date('2026-02-25T10:31:30') },
   ];
 
   newMessage = '';
@@ -31,7 +32,8 @@ export class ChatComponent {
       const message: ChatMessage = {
         id: this.messages.length + 1,
         text: this.newMessage,
-        sender: 'boy'
+        sender: 'boy',
+        timestamp: new Date()
       };
       this.messages.push(message);
       this.newMessage = '';

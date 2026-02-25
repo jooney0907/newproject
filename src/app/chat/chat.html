@@ -1,12 +1,13 @@
 <div class="chat-container">
   <div class="chat-header">
-    <h2>What Did They Really Mean?</h2>
+    <h2>What Do They Really Mean?</h2>
   </div>
   
   <div class="chat-messages">
     @for (message of messages; track message.id) {
       <div class="message" [class]="message.sender">
         <div class="message-bubble">
+          <span class="timestamp">{{ message.timestamp | date:'shortTime' }}</span>
           <p class="message-text">{{ message.text }}</p>
           @if (message.translation) {
             <p class="message-translation">→ {{ message.translation }}</p>
