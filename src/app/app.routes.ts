@@ -12,6 +12,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pricing/pricing').then(m => m.PricingComponent)
     },
     {
+        path: 'settings',
+        loadComponent: () => import('./settings/settings').then(m => m.SettingsComponent)
+    },
+    {
         path: 'chat',
         loadComponent: () => import('./chat/chat').then(m => m.ChatComponent)
     }

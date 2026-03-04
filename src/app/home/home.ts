@@ -32,6 +32,10 @@ export class HomeComponent {
     this.router.navigate(['/pricing']);
   }
 
+  goToSettings() {
+    this.router.navigate(['/settings']);
+  }
+
   logout() {
     localStorage.removeItem('account');
     this.isLoggedIn = false;
