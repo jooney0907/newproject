@@ -1,6 +1,9 @@
 <div class="home-container">
   <header class="header">
-    <div class="logo">♥ What Do They Really Mean?</div>
+    <div class="logo">
+      <span class="logo-icon">&hearts;</span>
+      <span class="logo-text">Translator</span>
+    </div>
     <div class="nav-buttons">
       @if (isLoggedIn) {
         <button (click)="logout()" class="btn btn-outline">Logout</button>
@@ -12,8 +15,16 @@
   </header>
 
   <section class="hero">
-    <h1>Decode the Mystery of Communication</h1>
-    <p class="hero-subtitle">Ever wonder what they really mean? We're here to help translate the confusing world of dating and relationships.</p>
+    <div class="hero-content">
+      <h1>Decode the Mystery of Communication</h1>
+      <p class="hero-subtitle">Ever wonder what they really mean? We're here to help translate the confusing world of dating and relationships.</p>
+      <div class="hero-actions">
+        <button (click)="goToChat()" class="btn btn-primary">Try demo now</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/boygirltalk.jpg" alt="Communication">
+    </div>
   </section>
 
   <section class="features">
@@ -59,3 +70,5 @@
     <p>Made with ♥ for better communication</p>
   </footer>
 </div>
+
+

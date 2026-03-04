@@ -24,6 +24,10 @@ export class HomeComponent {
     this.router.navigate(['/signup']);
   }
 
+  goToChat() {
+    this.router.navigate(['/chat']);
+  }
+
   logout() {
     localStorage.removeItem('account');
     this.isLoggedIn = false;

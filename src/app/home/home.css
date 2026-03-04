@@ -19,9 +19,22 @@
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
   color: #d6336c;
+}
+
+.logo-text {
+  font-family: 'Georgia', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #d6336c;
+  font-weight: 600;
 }
 
 .nav-buttons {
@@ -62,26 +75,49 @@
 }
 
 .hero {
-  padding: 10rem 2rem 4rem;
-  text-align: center;
-  background: linear-gradient(135deg, #fff5f9 0%, #f0f7ff 100%);
+  padding: 10rem 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
 }
 
 .hero h1 {
   font-size: 3rem;
   color: #333;
   margin-bottom: 1rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 500px;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
   color: #666;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 450px;
   line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .features {
@@ -188,8 +224,31 @@
     padding: 1rem 1.5rem;
   }
 
+  .hero {
+    flex-direction: column;
+    padding: 8rem 1.5rem 3rem;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
   .hero h1 {
     font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
   }
 
   .features {
@@ -201,3 +260,5 @@
     max-width: 320px;
   }
 }
+
+
