@@ -1,8 +1,11 @@
 <div class="home-container">
   <header class="header">
-    <div class="logo">
-      <span class="logo-icon">&hearts;</span>
-      <span class="logo-text">Translator</span>
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">&hearts;</span>
+        <span class="logo-text">Translator</span>
+      </div>
+      <button (click)="goToPricing()" class="btn btn-outline">Pricing</button>
     </div>
     <div class="nav-buttons">
       @if (isLoggedIn) {

@@ -1,0 +1,49 @@
+<div class="pricing-container">
+  <header class="header">
+    <div class="logo" (click)="goHome()">
+      <span class="logo-icon">&hearts;</span>
+      <span class="logo-text">Translator</span>
+    </div>
+    <button class="btn btn-outline" (click)="goHome()">Home</button>
+  </header>
+
+  <section class="pricing-hero">
+    <h1>Pick Your Plan</h1>
+    <p>Start free, then upgrade as your conversations grow.</p>
+  </section>
+
+  <section class="pricing-grid">
+    <article class="pricing-card">
+      <h2>Free</h2>
+      <p class="price">$0<span>/month</span></p>
+      <ul>
+        <li>Basic message translation</li>
+        <li>5 demo chats per day</li>
+        <li>Community support</li>
+      </ul>
+      <p class="current-plan">Current Plan</p>
+    </article>
+
+    <article class="pricing-card featured">
+      <h2>Pro</h2>
+      <p class="price">$12<span>/month</span></p>
+      <ul>
+        <li>Unlimited chat translations</li>
+        <li>Context-aware insights</li>
+        <li>Priority support</li>
+      </ul>
+      <button class="btn btn-primary" (click)="goToChat()">Choose Pro</button>
+    </article>
+
+    <article class="pricing-card">
+      <h2>Premium</h2>
+      <p class="price">$29<span>/month</span></p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Relationship deep-dive reports</li>
+        <li>1:1 expert review sessions</li>
+      </ul>
+      <button class="btn btn-outline" (click)="goToChat()">Go Premium</button>
+    </article>
+  </section>
+</div>

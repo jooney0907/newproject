@@ -28,6 +28,10 @@ export class HomeComponent {
     this.router.navigate(['/chat']);
   }
 
+  goToPricing() {
+    this.router.navigate(['/pricing']);
+  }
+
   logout() {
     localStorage.removeItem('account');
     this.isLoggedIn = false;
